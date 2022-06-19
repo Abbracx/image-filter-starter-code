@@ -31,7 +31,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
     const image: string = req.query.image_url
 
-    if(!image) return res.status(400).send("Please provide an image URL")
+    if(!image) return res.status(422).send("Please provide an image URL")
 
     try {
       const filteredImage: string = await filterImageFromURL(image);
